@@ -20,10 +20,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NewsCatcherTheme {
-//                    MainNavHost(
-//                        startDestination = ScreenRoutes.Home
-//                    )
-                HomeScreen()
+                    MainNavHost(
+                        startDestination = ScreenRoutes.DetailsRoot
+                    )
             }
         }
     }

@@ -3,6 +3,7 @@ package com.selcanasirova.newscatcher.presentation.common.components.news
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.PathNode
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -27,10 +29,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.selcanasirova.newscatcher.data.MainNewsData
+import com.selcanasirova.newscatcher.navigation.ScreenRoutes
 import com.selcanasirova.newscatcher.presentation.common.theme.LocalCustomColors
 
 @Composable
-fun News() {
+fun News(
+    onNavigateTo: (ScreenRoutes) -> Unit
+) {
     val colors = LocalCustomColors.current
     LazyColumn {
         items(MainNewsData.entries) { item ->
@@ -39,6 +44,8 @@ fun News() {
                     .fillMaxWidth()
 //                    .background(colors.primaryBackground)
                     .padding(vertical =  16.dp)
+                    .clickable { onNavigateTo(ScreenRoutes.DetailsRoot) }
+
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -106,5 +113,5 @@ fun News() {
 @Preview
 @Composable
 fun NewsPreview(){
-    News()
+    News(onNavigateTo = {})
 }

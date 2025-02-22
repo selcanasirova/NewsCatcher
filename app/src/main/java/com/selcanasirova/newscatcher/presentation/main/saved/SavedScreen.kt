@@ -9,21 +9,25 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.PathNode
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.selcanasirova.newscatcher.navigation.ScreenRoutes
 import com.selcanasirova.newscatcher.presentation.common.components.bar.NavBar
 import com.selcanasirova.newscatcher.presentation.common.components.news.News
 import com.selcanasirova.newscatcher.presentation.common.components.news.NewsHeader
 
 @Composable
-fun SavedScreen(){
+fun SavedScreen(
+    onNavigateTo: (ScreenRoutes) -> Unit
+){
     Scaffold (
-        bottomBar = { NavBar() }
+        bottomBar = { NavBar(onNavigateTo) }
     ) {paddingValues->
         Column(modifier = Modifier.fillMaxSize().padding(horizontal = 23.dp, vertical = 33.dp)) {
             NewsHeader()
             Spacer(modifier = Modifier.height(31.dp).padding(paddingValues))
-            News()
+            News(onNavigateTo)
         }
     }
 
@@ -33,5 +37,5 @@ fun SavedScreen(){
 @Preview
 @Composable
 fun SavedScreenPreview(){
-    SavedScreen()
+    SavedScreen(onNavigateTo = {})
 }

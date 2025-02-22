@@ -12,6 +12,6 @@ fun NavGraphBuilder.homeNavGraph(
     onNavigateTo: (ScreenRoutes) -> Unit
 ){
     composable<ScreenRoutes.Home>{
-        HomeScreen()
+        HomeScreen(onNavigateTo)
     }
 }

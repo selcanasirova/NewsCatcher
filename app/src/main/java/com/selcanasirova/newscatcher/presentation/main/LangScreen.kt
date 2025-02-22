@@ -2,6 +2,7 @@ package com.selcanasirova.newscatcher.presentation.main
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,13 +35,17 @@ import androidx.compose.ui.unit.sp
 import com.selcanasirova.newscatcher.R
 import com.selcanasirova.newscatcher.data.Lang
 import com.selcanasirova.newscatcher.presentation.common.theme.LocalCustomColors
+import java.util.Stack
 
 @Composable
-fun LangScreen(){
+fun LangScreen(
+    onPopBackStack: () -> Unit
+){
     val colors = LocalCustomColors.current
     Column(modifier = Modifier.fillMaxSize()
         .background(color = colors.primaryBackground)){
-        Box(modifier = Modifier.padding(top = 18.dp, start = 12.dp).width(63.dp).height(30.dp).clip(RoundedCornerShape(32.dp)).background(color = colors.secondaryBackground.copy(alpha = 0.6f)), contentAlignment = Alignment.CenterStart){
+        Box(modifier = Modifier.padding(top = 18.dp, start = 12.dp).width(63.dp).height(30.dp).clip(RoundedCornerShape(32.dp)).background(color = colors.secondaryBackground.copy(alpha = 0.6f))
+            .clickable { onPopBackStack() }, contentAlignment = Alignment.CenterStart){
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
@@ -77,5 +82,5 @@ fun LangScreen(){
 @Preview
 @Composable
 fun LangScreenPreview (){
-    LangScreen()
+    LangScreen(onPopBackStack = {})
 }

@@ -13,7 +13,11 @@ enum class MainNewsData (
     News1(R.drawable.newsimg,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance"),
     News2(R.drawable.download,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance"),
     News3(R.drawable.newsimg,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance"),
-//    News4(R.drawable.download,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance")
+    News4(R.drawable.download,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance"),
+    News5(R.drawable.newsimg,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance"),
+    News6(R.drawable.download,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance"),
+    News7(R.drawable.newsimg,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance"),
+    News8(R.drawable.download,"New Music Releases March 25: Ed Sheeran, J Balvin, Maren... ","Factbox: Who is still buying Russian crude oil?","Jennifer Wars","2022-03-26","Finance")
 }
 
 enum class Lang(

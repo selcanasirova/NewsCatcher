@@ -32,14 +32,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import com.selcanasirova.newscatcher.R
+import com.selcanasirova.newscatcher.navigation.ScreenRoutes
 import com.selcanasirova.newscatcher.presentation.common.components.bar.NavBar
 import com.selcanasirova.newscatcher.presentation.common.theme.LocalCustomColors
 
 @Composable
-fun Details(){
+fun Details(
+    onNavigateTo: (ScreenRoutes) -> Unit
+){
     val colors = LocalCustomColors.current
     Scaffold(
-        bottomBar = { NavBar() }
+        bottomBar = { NavBar(onNavigateTo ) }
     ) {paddingValues ->
         Column(modifier = Modifier.background(color = colors.primaryBackground).padding(paddingValues)) {
             Box(){
@@ -165,5 +168,5 @@ fun Details(){
 @Preview
 @Composable
 fun DetailsRreview(){
-    Details()
+    Details(onNavigateTo = {})
 }

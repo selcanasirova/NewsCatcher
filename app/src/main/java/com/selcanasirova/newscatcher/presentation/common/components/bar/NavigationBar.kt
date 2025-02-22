@@ -9,14 +9,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.PathNode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import com.selcanasirova.newscatcher.R
+import com.selcanasirova.newscatcher.navigation.ScreenRoutes
 import com.selcanasirova.newscatcher.presentation.common.theme.LocalCustomColors
 
 @Composable
-fun NavBar() {
+fun NavBar(
+    onNavigateTo: (ScreenRoutes) -> Unit
+) {
     val colors = LocalCustomColors.current
     val backgroundColor = colors.primaryBackground
     val borderColor = colors.primaryText
@@ -38,20 +43,21 @@ fun NavBar() {
         NavigationBarItem(
             icon = { Icon(painterResource(R.drawable.home_icon), contentDescription = "Home", modifier = Modifier.size(35.dp)) },
             selected = true,
-            onClick = {},
-            colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent)
+            onClick = { onNavigateTo(ScreenRoutes.HomeRoot) },
+            colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent),
+
         )
         NavigationBarItem(
             icon = { Icon(painterResource(R.drawable.save_icon), contentDescription = "Saved", modifier = Modifier.size(35.dp)) },
             selected = false,
-            onClick = {},
+            onClick = {onNavigateTo(ScreenRoutes.SavedRoot)},
             colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent)
         )
     }
 }
 
-@Preview
-@Composable
-fun NavigationBarPreview() {
-    NavBar()
-}
+//@Preview
+//@Composable
+//fun NavigationBarPreview() {
+//    NavBar()
+//}

@@ -14,6 +14,6 @@ fun NavGraphBuilder.savedNavGraph(
   onNavigateTo: (ScreenRoutes) -> Unit
 ){
     composable<ScreenRoutes.SavedPage>{
-        SavedScreen()
+        SavedScreen(onNavigateTo)
     }
 }

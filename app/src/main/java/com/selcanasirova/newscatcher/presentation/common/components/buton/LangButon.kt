@@ -1,6 +1,7 @@
 package com.selcanasirova.newscatcher.presentation.common.components.buton
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -15,16 +16,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.PathNode
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.selcanasirova.newscatcher.navigation.ScreenRoutes
 import com.selcanasirova.newscatcher.presentation.common.theme.LocalCustomColors
 
 @Composable
-fun LangBtn(){
+fun LangBtn(
+    onNavigateTo: (ScreenRoutes) -> Unit
+){
     val colors = LocalCustomColors.current
-    Box(modifier = Modifier.width(75.dp).height(26.dp).clip(RoundedCornerShape(16.dp)).background(color = colors.secondaryBackground), contentAlignment = Alignment.Center){
+    Box(modifier = Modifier.width(75.dp).height(26.dp).clip(RoundedCornerShape(16.dp)).background(color = colors.secondaryBackground)
+        .clickable { onNavigateTo(ScreenRoutes.LangRoot) }, contentAlignment = Alignment.Center){
         Row (modifier = Modifier.fillMaxWidth().padding(horizontal = 10.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically){
             Text("EN",
                 fontSize = 11.sp, fontWeight = FontWeight(500), lineHeight = 13.sp, color = colors.primaryText
@@ -39,5 +45,5 @@ fun LangBtn(){
 @Preview
 @Composable
 fun LangBtnPreview(){
-    LangBtn()
+    LangBtn(onNavigateTo = {})
 }

@@ -14,6 +14,6 @@ fun NavGraphBuilder.lagnNavGraph(
     onNavigateTo: (ScreenRoutes) -> Unit
 ){
     composable<ScreenRoutes.LangScreen> {
-        LangScreen()
+        LangScreen(onPopBackStack)
     }
 }

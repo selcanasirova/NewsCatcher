@@ -1,6 +1,5 @@
 package com.selcanasirova.newscatcher.navigation.nav_graph
 
-import androidx.compose.ui.graphics.vector.PathNode
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -14,6 +13,6 @@ fun NavGraphBuilder.detailNavGraph(
     onNavigateTo: (ScreenRoutes) -> Unit
 ){
     composable<ScreenRoutes.Details>{
-        Details()
+        Details(onNavigateTo)
     }
 }

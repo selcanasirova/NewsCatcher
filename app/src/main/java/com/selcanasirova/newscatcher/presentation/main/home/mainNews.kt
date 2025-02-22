@@ -2,6 +2,7 @@ package com.selcanasirova.newscatcher.presentation.main.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.vector.PathNode
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -27,15 +29,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.selcanasirova.newscatcher.data.MainNewsData
+import com.selcanasirova.newscatcher.navigation.ScreenRoutes
 import com.selcanasirova.newscatcher.presentation.common.theme.LocalCustomColors
 
 @Composable
-fun MainNews(){
+fun MainNews(
+    onNavigateTo: (ScreenRoutes) -> Unit
+){
     val colors = LocalCustomColors.current
     LazyRow (modifier = Modifier
         , horizontalArrangement = Arrangement.spacedBy(27.dp)){
         items(MainNewsData.entries) { item ->
-            Box( modifier = Modifier.width(320.dp).height(180.dp).clip(RoundedCornerShape(16.dp))){
+            Box( modifier = Modifier.width(320.dp).height(180.dp).clip(RoundedCornerShape(16.dp))
+                .clickable { onNavigateTo(ScreenRoutes.DetailsRoot) }){
                 Image(
                     painterResource(item.img), contentDescription = "img",
                     modifier = Modifier.fillMaxSize(),
@@ -64,5 +70,5 @@ fun MainNews(){
 @Preview
 @Composable
 fun MainNewsPreview() {
-    MainNews()
+    MainNews(onNavigateTo = {})
 }

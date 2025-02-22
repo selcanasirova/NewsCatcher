@@ -31,7 +31,7 @@ fun MainNavHost(
         navController = navController,
         startDestination = startDestination,
     ) {
-        navigation<ScreenRoutes.Home>(
+        navigation<ScreenRoutes.HomeRoot>(
             startDestination = ScreenRoutes.Home
         ){
             homeNavGraph(
@@ -42,7 +42,7 @@ fun MainNavHost(
             )
         }
         
-        navigation<ScreenRoutes.Details>(
+        navigation<ScreenRoutes.DetailsRoot>(
             startDestination= ScreenRoutes.Details
         ){
             detailNavGraph(
@@ -52,7 +52,7 @@ fun MainNavHost(
             )
         }
         
-        navigation<ScreenRoutes.LangScreen>(
+        navigation<ScreenRoutes.LangRoot>(
             startDestination = ScreenRoutes.LangScreen
         ){
             lagnNavGraph(
@@ -62,7 +62,7 @@ fun MainNavHost(
             )
         }
         
-        navigation<ScreenRoutes.SavedPage>(
+        navigation<ScreenRoutes.SavedRoot>(
             startDestination = ScreenRoutes.SavedPage
         ){
             savedNavGraph(
