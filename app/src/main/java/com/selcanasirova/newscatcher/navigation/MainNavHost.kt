@@ -37,7 +37,7 @@ fun MainNavHost(
             homeNavGraph(
                 navController = navController,
                 onPopBackStack = navController::popBackStack,
-                onNavigateTo = {navController.navigate(it)}
+                onNavigateTo = navController::navigate
 
             )
         }
@@ -48,7 +48,7 @@ fun MainNavHost(
             detailNavGraph(
                 navController = navController,
                 onPopBackStack = navController::popBackStack,
-                onNavigateTo = {navController.navigate(it)}
+                onNavigateTo = navController::navigate
             )
         }
         
@@ -58,7 +58,7 @@ fun MainNavHost(
             lagnNavGraph(
                 navController = navController,
                 onPopBackStack = navController::popBackStack,
-                onNavigateTo = {navController.navigate(it)}
+                onNavigateTo = navController::navigate
             )
         }
         
@@ -68,7 +68,7 @@ fun MainNavHost(
             savedNavGraph(
                 navController = navController,
                 onPopBackStack = navController::popBackStack,
-                onNavigateTo = {navController.navigate(it)}
+                onNavigateTo = navController::navigate
             )
         }
 

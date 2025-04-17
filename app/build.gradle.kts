@@ -2,9 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-
-    id ("org.jetbrains.kotlin.plugin.serialization")
-
+    id("com.google.devtools.ksp")
+    id ("org.jetbrains.kotlin.plugin.serialization") version "1.9.0"
 //    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
 
 }
@@ -55,6 +54,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.protolite.well.known.types)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -69,5 +69,20 @@ dependencies {
 
     implementation(libs.androidx.navigation.compose)
 
-//    implementation(libs.androidx.hilt.navigation.fragment)
+    implementation(libs.androidx.hilt.navigation.fragment)
+    implementation (libs.hilt.android.gradle.plugin)
+    implementation (libs.hilt.android)
+    implementation(libs.kotlinx.serialization.json)
+    implementation (libs.hilt.android)
+
+    implementation (libs.retrofit)
+    implementation (libs.androidx.runtime.livedata)
+    implementation (libs.androidx.lifecycle.runtime.ktx)
+    implementation (libs.androidx.lifecycle.viewmodel.compose)
+
+    implementation (libs.converter.gson)
+
+    implementation (libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+
 }

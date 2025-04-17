@@ -13,6 +13,6 @@ fun NavGraphBuilder.detailNavGraph(
     onNavigateTo: (ScreenRoutes) -> Unit
 ){
     composable<ScreenRoutes.Details>{
-        Details(onNavigateTo)
+        Details(onNavigateTo,onPopBackStack)
     }
 }

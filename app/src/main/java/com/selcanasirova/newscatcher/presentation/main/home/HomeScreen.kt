@@ -33,11 +33,13 @@ fun HomeScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(paddingValues)
+                .padding(horizontal = 23.dp)
+                .padding(top = 33.dp)
                 .background(color = colors.primaryBackground)
-                .padding(horizontal = 23.dp, vertical = 33.dp)
         ) {
             NewsHeader()
-            Spacer(modifier = Modifier.height(41.dp).padding(paddingValues))
+            Spacer(modifier = Modifier.height(41.dp))
             MainNews(onNavigateTo)
             Spacer(modifier = Modifier.height(25.dp))
             Search()

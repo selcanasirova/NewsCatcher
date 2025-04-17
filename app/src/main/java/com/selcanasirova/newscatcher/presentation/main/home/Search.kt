@@ -28,7 +28,7 @@ fun Search(){
         .border(1.dp, color = colors.primaryBorder, shape = RoundedCornerShape(16.dp))
         .background(color = colors.primaryBackground),
         value = text,
-        onValueChange = {text+it},
+        onValueChange = {text = it},
         placeholder = {
             Text(
                 "Search...",

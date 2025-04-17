@@ -24,9 +24,9 @@ fun SavedScreen(
     Scaffold (
         bottomBar = { NavBar(onNavigateTo) }
     ) {paddingValues->
-        Column(modifier = Modifier.fillMaxSize().padding(horizontal = 23.dp, vertical = 33.dp)) {
+        Column(modifier = Modifier.fillMaxSize().padding(paddingValues).padding(horizontal = 23.dp, vertical = 33.dp)) {
             NewsHeader()
-            Spacer(modifier = Modifier.height(31.dp).padding(paddingValues))
+            Spacer(modifier = Modifier.height(31.dp))
             News(onNavigateTo)
         }
     }
